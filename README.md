@@ -1,195 +1,212 @@
 # databases-for-analytics
 
+[![Workflow Guide](https://img.shields.io/badge/Pro--Guide-pro--analytics--02-green)](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
+[![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](./pyproject.toml)
+[![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
+[![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
+[![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
+[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
+
 > Professional Databases for Analytics Project.
 
 ## Project Planning
 
-Use this repository to present, document, and reflect on database-related analytics work as the course evolves.
+Use this repository to present, document,
+and reflect on database-related analytics work as the course evolves.
 
 See [exercises/](./exercises/).
 
----
+## First, Make Sure Your Machine is Set Up
 
-## Three Workflows
+Complete
+[**Workflow A: Set Up Your Machine**](https://denisecase.github.io/pro-analytics-02/)
+and verify all steps.
+A good foundation is critical and will have time later.
+Things change, so be sure to follow the new process
 
-There are three workflows for analytics projects.
+## Get this Example Project
 
-- 01: Set Up Machine (Once Per Machine)
-- 02: Set Up Project (Once Per Project)
-- 03: Daily Workflow (Working With Python Project Code)
+Follow the
+[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
+carefully.
 
-## 01: Set Up Machine (Once Per Machine)
+## Challenges
 
-Follow the detailed instructions at:
-[**01. Set Up Your Machine**](https://denisecase.github.io/pro-analytics-02/01-set-up-machine/)
+Challenges are expected.
+Sometimes instructions may not quite match your operating system.
+When issues occur, share screenshots, error messages,
+and details about what you tried.
+Working through issues is part of implementing professional projects.
 
-🛑 All steps must be completed and verified successfully.
+## Success
 
-## 02: Set Up Project (Once Per Project)
-
-Follow the detailed instructions at:
-[**02. Set Up Your Project**](https://denisecase.github.io/pro-analytics-02/02-set-up-project/)
-
-Detailed instructions are provided to:
-
-1. Sign in to GitHub, open this repository in your browser, and click **Copy this template** to get a copy in **YOURACCOUNT**.
-2. Enable GitHub Pages.
-3. Open a **machine terminal** in your `Repos` folder and clone your new repo.
-4. Change directory into the repo, open the project in VS Code, and install recommended extensions.
-5. Set up a project Python environment (managed by `uv`) and align VS Code with it.
-
-Use the instructions above to get it ALL set up correctly.
-Most people open a terminal on their machine (not VS Code), open in their Repos folder and run:
+After completing Phase 1. **Start & Run**, you'll have this example project
+running on your machine.
+A new file `project.log` will appear in the root project folder
+and running the example script will print out:
 
 ```shell
-git clone https://github.com/YOURACCOUNT/databases-for-analytics
+===================================
+END main() - Executed successfully!
+===================================
+```
+
+## Command Reference
+
+The commands below are used in the workflow guide above.
+They are provided here for convenience.
+
+Follow the guide for the **full instructions**.
+
+<details markdown>
+<summary>Show command reference</summary>
+
+### In a machine terminal (open in your `Repos` folder)
+
+Open a machine terminal in your `Repos` folder,
+change directory (cd) into the new folder,
+and run `code .` to open only this project in VS Code:
+
+```shell
+git clone https://github.com/denisecase/databases-for-analytics
 
 cd databases-for-analytics
 code .
 ```
 
-When VS Code opens, accept the Extension Recommendations (click **`Install All`** or similar when asked).
+When VS Code opens, accept the Extension Recommendations
+(click **`Install All`** or similar when asked).
 
-Use VS Code menu option `Terminal` / `New Terminal` to open a **VS Code terminal** in the root project folder.
-Run the following commands, one at a time, hitting ENTER after each:
+### In a VS Code terminal
+
+To set up a local project Python environment (managed by `uv`)
+and align VS Code with it, run the following commands.
+
+These are listed for convenience.
+For best results, follow the detailed instructions in
+[pro-analytics-02 guide](https://denisecase.github.io/pro-analytics-02/).
+
+Use VS Code menu option `Terminal` / `New Terminal` to open a **VS Code terminal**
+in the root project folder.
+Copy each command, paste into your terminal, and hit ENTER,
+to run each command one at a time.
 
 ```shell
 uv self update
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+
+uv python install
+uv lock --upgrade
+uv sync
 ```
 
-If asked: "We noticed a new environment has been created. Do you want to select it for the workspace folder?" Click **"Yes"**.
-
+If asked: "We noticed a new environment has been created.
+Do you want to select it for the workspace folder?" Click **"Yes"**.
 If successful, you'll see a new `.venv` folder appear in the root project folder.
 
-Optional (recommended): install and run pre-commit checks (repeat the git `add` and `commit` twice if needed):
+Install and run pre-commit checks (twice if necessary as shown below):
 
 ```shell
-uvx pre-commit install
+uv run pre-commit install
+uv run pre-commit autoupdate
+
 git add -A
-uvx pre-commit run --all-files
-git add -A
-uvx pre-commit run --all-files
+uv run pre-commit run --all-files
+# repeat if changes were made by pre-commit tasks
+uv run pre-commit run --all-files
 ```
 
-🛑 Do not continue until all REQUIRED steps are complete and verified.
+### Daily Workflow (Working With Python Project Code)
 
-## 03: Daily Workflow (Working With Python Project Code)
-
-Follow the detailed instructions at:
-[**03. Daily Workflow**](https://denisecase.github.io/pro-analytics-02/03-daily-workflow/)
-
-Commands are provided below to:
-
-1. Git pull
-2. Run and check the Python files
-3. Build and serve docs
-4. Save progress with Git add-commit-push
-5. Update project files
-
-VS Code should have only this project (databases-for-analytics) open.
-Use VS Code menu option `Terminal` / `New Terminal` and run the following commands:
+VS Code should have only this project open.
+Open a VS Code terminal (menu: `Terminal` / `New Terminal`) and run:
 
 ```shell
 git pull
-```
 
-In the same VS Code terminal, run any Python source files:
+# run the module
+uv run python -m datafun.app
 
-```shell
-uv run python src/databases_for_analytics/FILENAME.py
-```
-
-If a command fails, verify:
-
-- Only this project is open in VS Code.
-- The terminal is open in the project root folder.
-- The `uv sync --extra dev --extra docs --upgrade` command completed successfully.
-
-Hint: if you run `ls` in the terminal, you should see files including `pyproject.toml`, `README.md`, and `uv.lock`.
-
-Run Python checks and tests (as available):
-
-```shell
+# do chores
 uv run ruff format .
 uv run ruff check . --fix
-uv run pytest --cov=src --cov-report=term-missing
+uv run ty check
+uv run python -m pytest
+uv run python -m zensical build
 ```
 
-Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):
+While editing project code and docs, repeat the commands above to
+run files, check them, and rebuild docs as needed.
 
-```shell
-uv run mkdocs build --strict
-uv run mkdocs serve
-```
-
-While editing project code and docs, repeat the commands above to run files, check them, and rebuild docs as needed.
-
-Save progress frequently (some tools may make changes; you may need to **re-run git `add` and `commit`** to ensure everything gets committed before pushing):
+Save progress frequently.
+Some tools may make changes;
+you may need to **re-run git `add` and `commit`**
+to ensure everything gets committed before pushing.
 
 ```shell
 git add -A
-git commit -m "update"
+git commit -m "your message here"
+# repeat if changes were made (try the UP ARROW)
+git add -A
+git commit -m "your message here"
+
 git push -u origin main
 ```
 
-Additional details and troubleshooting are available in the [Pro-Analytics-02 Documentation](https://denisecase.github.io/pro-analytics-02/).
+</details>
 
----
+## Helpful Tips
 
-## Project Objectives
+- Use the **UP ARROW** and **DOWN ARROW** in the terminal
+  to scroll through past commands.
+- Use `CTRL+f` to find (and replace) text within a file.
 
-### Project Task 1. Personalize Your Documentation Links
+## Much Can Be Ignored
 
-Open [mkdocs.yaml](./mkdocs.yaml).
-This file configures the associated project documentation website (powered by MkDocs)
-Use CTRL+f to find each occurrence of the source GitHub account (e.g. `denisecase`).
-Change each occurrence to point to your GitHub account instead (spacing and capitalization MUST match the URL of your GitHub account **exactly**.)
+- You do not need to add to or modify `tests/`.
+  Tests are recommended and provided for example only.
+- Many files are silent helpers.
+  [Explore](https://denisecase.github.io/professional-python-project-explainer/)
+  as you like, but most files are never touched.
+- You do NOT need to understand everything;
+  let understanding build over time.
 
-### Project Task 2. Present Exercises
+## As Needed
 
-As we work through the class, rather than saving information in quizzes or Word documents, use the associated Markdown documents to record and present your work.
+If VS Code does not automatically use the new `.venv` environment:
 
----
+1. Open the Command Palette (`Ctrl+Shift+P`).
+2. Run **Python: Select Interpreter**.
+3. Select the interpreter from this project's `.venv` folder.
 
-## Notes
+If VS Code still does not recognize the environment or newly installed tools:
 
-- You do not need to add to or modify `tests/`. They are provided for example only.
-- You do not need to view or modify any of the supporting **config files**.
-- Many of the repo files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT need to understand everything. Understanding builds naturally over time.
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) with in a file.
+1. Open the Command Palette (`Ctrl+Shift+P`).
+2. Run **Developer: Reload Window**.
 
-## Troubleshooting >>> or ...
+## Troubleshooting >>>
 
 If you see something like this in your terminal: `>>>` or `...`
 You accidentally started Python interactive mode.
 It happens.
-Press `Ctrl c` (both keys together) or `Ctrl Z` then `Enter` on Windows.
+Press `Ctrl c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
-## Resources
+## Documentation
 
-- [Pro-Analytics-02](<[./docs/pro-tips.md](https://denisecase.github.io/pro-analytics-02/)>) - guide to professional Python
-- [ANNOTATIONS.md](./ANNOTATIONS.md) - REQ/WHY/OBS annotations used
-- [INSTRUCTORS.md](./docs/root/INSTRUCTORS.md) - guidance and notes for instructors and maintainers
-- [POLICIES.md](./docs/root/POLICIES.md) - project rules and expectations that apply to all contributors
-- [SKILLS.md](./docs/root/SKILLS.md) - skills, concepts, and professional practices (there are many)
-- [SE_MANIFEST.toml](./SE_MANIFEST.toml) - project intent, scope, and role
+- [Documentation](https://denisecase.github.io/databases-for-analytics/)
+
+## Data Card
+
+- [Palmer Penguins Data Card](./docs/data-card.md)
+
+## Annotations
+
+- [.annotations/annotations.md](./.annotations/annotations.md)
 
 ## Citation
 
-[CITATION.cff](./CITATION.cff) - TODO: update author and repository fields to reflect your creative work
-
-<!--
-WHY: Support correct citation and attribution.
--->
+- [CITATION.cff](./CITATION.cff)
 
 ## License
 
-[MIT](./LICENSE)
-
-<!--
-WHY: Provide terms of reuse and limits of liability.
--->
+This project is licensed under the [MIT License](./LICENSE).

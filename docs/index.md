@@ -1,17 +1,24 @@
-# Databases for Analytics
+# Project Documentation
 
-This project comes with professional documentation.
+> You can use this hosted documentation site to present your
+> data stories.
 
-Explore the tabs and sidebars for content.
+## How-To Guide
 
-This is where we present our analytics work.
+Many instructions are common to all our projects.
 
----
+See
+[⭐ **Workflow B: Apply Example Project**](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
+to get a project like this running on your machine.
 
-## Customize this documentation site
+## Professional Projects
 
-To customize, edit:
+- We work like the pros to help us **focus on the data**.
+- Most files in this repository will never be touched.
+- If curious about a file, check out the
+  [Professional Python Project Explainer](https://denisecase.github.io/professional-python-project-explainer/).
 
-- `docs/` (Markdown pages)
-- `mkdocs.yaml` (in the repo root)
-  - scroll to the bottom for the `nav:` section
+## Documentation Index
+
+- **Home** - this landing page
+- [**Concepts**](./concepts.md)

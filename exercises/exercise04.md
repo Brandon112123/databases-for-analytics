@@ -23,10 +23,13 @@
 
 ## Question 1
 
-Considering the World database, write a SQL statement that will **display the names of countries that speak more than two official languages**, along with the **number of official languages spoken**.
+Considering the World database, write a SQL statement that will
+**display the names of countries**
+that speak **more than two official languages**,
+along with the **number of official languages spoken**.
 
 - Sort the results by **number of languages**, from **most to least**.
-- *Hint: There are fewer than 10 countries in the results.*
+- _Hint: There are fewer than 10 countries in the results._
 
 ### SQL
 
@@ -42,9 +45,13 @@ Considering the World database, write a SQL statement that will **display the na
 
 ## Question 2
 
-Using **Jupyter Notebooks**, you must use the `create_engine` command to connect to your database.
+Using **Jupyter Notebooks**, you must use the
+`create_engine` command to connect to your database.
 
-After the `create_engine` command is executed, **what are the three statements required to execute the query from Question 1 and display the results in the notebook**?
+After the `create_engine` command is executed,
+**what are the three statements** required to
+execute the query from Question 1 and
+**display the results in the notebook**?
 
 ### Python Code
 
@@ -60,7 +67,8 @@ After the `create_engine` command is executed, **what are the three statements r
 
 ## Question 3
 
-Using **Jupyter Notebooks**, write the Python code needed to produce the following graph:
+Using **Jupyter Notebooks**, write the Python code needed
+to produce the following graph:
 
 ![countries.jpg](./instructions/04-countries.jpg)
 

@@ -21,15 +21,18 @@
 ## Question 1
 
 **Compare and contrast the data types used for:**
+
 - `country.Population`
 - `country.LifeExpectancy`
 
 Why were these data types selected?
 
 ### Answer
+
 _Write your explanation here._
 
 ### Screenshot
+
 _Show the table structure or DESCRIBE output._
 
 ```sql
@@ -46,6 +49,7 @@ DESCRIBE country;
 Why do you think this data type was selected?
 
 ### Answer
+
 _Write your explanation here._
 
 ### Screenshot
@@ -64,6 +68,7 @@ DESCRIBE country;
 Explain why your proposed data type might be better in some situations.
 
 ### Answer
+
 _Write your explanation here._
 
 ---
@@ -88,7 +93,9 @@ ORDER BY Name;
 
 ## Question 5
 
-Write a SQL command to **list all forms of government from the `country` table**, showing **each only once**, sorted alphabetically.
+Write a SQL command to
+**list all forms of government from the `country` table**,
+showing **each only once**, sorted alphabetically.
 
 ### SQL
 
@@ -159,7 +166,8 @@ WHERE Name = 'Nashville-Davidson';
 
 ## Question 9
 
-Write a SQL command to **insert a new country named `"Narnia"`** with a country code of `"NAR"`.
+Write a SQL command to **insert a new country named `"Narnia"`**
+with a country code of `"NAR"`.
 Use reasonable values for the remaining columns.
 
 ### SQL

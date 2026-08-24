@@ -5,7 +5,7 @@ REQ: Test pure functions that return values.
 WHY: Pure functions are easy to verify; ensures code works as expected.
 """
 
-from databases_for_analytics.app_case import get_summary
+from databases_for_analytics.app import get_summary
 
 
 def test_generate_summary_contains_expected_fields() -> None:

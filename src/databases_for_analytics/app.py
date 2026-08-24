@@ -1,33 +1,20 @@
-"""app_case.py - Project script (example).
+"""app.py - Project script (example).
 
 Author: Denise Case
-Date: 2026-01
+Date: 2026-08
 
-OBS:
-  Don't edit this file - it should remain a working example.
 """
 
 
 # === DECLARE IMPORTS (BRING IN FREE CODE) ===
 
-# Python standard library
-import logging  # only needed so we can type hint the logger variable
-from typing import Final  # only needed for type hinting constants
+import logging
+from typing import Final
 
-# External (must be listed in pyproject.toml)
-# logging helps track program execution and is preferred over print statements
-# We'll use a pre-configured logger that respects privacy.
-from datafun_toolkit.logger import (
-    get_logger,
-    log_header,
-)
+from datafun_toolkit.logger import get_logger, log_header
 
 # === CONFIGURE LOGGER ONCE PER MODULE (PYTHON FILE) ===
 
-# Call the get_logger() function, pass in a phrase and the logging level we want.
-# The phrase helps identify the source of log messages.
-# The level could be "DEBUG", "INFO", "WARNING", "ERROR", or "CRITICAL".
-# Use DEBUG for development, INFO for production.
 LOG: logging.Logger = get_logger("P01", level="INFO")
 
 # === DECLARE GLOBAL CONSTANTS ===
@@ -42,7 +29,7 @@ LOG: logging.Logger = get_logger("P01", level="INFO")
 
 COURSE_NAME: Final[str] = "Databases for Analytics"
 COURSE_NUMBER: Final[int] = 661
-COURSE_HOURS_PER_WEEK: Final[float] = 20.0
+COURSE_HOURS_PER_WEEK: Final[float] = 15.0
 ASSUMES_PRIOR_EXPERIENCE: Final[bool] = (
     False  # NOTE: In Python, True and False are Capitalized (and not quoted).
 )
@@ -97,23 +84,26 @@ def main() -> None:
     Call the get_summary() function to get the formatted summary string,
     Log the summary string we get back from get_summary().
     """
-    LOG.info("=================")
-    log_header(LOG, "Foundations of Professional Python")
-    LOG.info("=================")
+    log_header(LOG, "DBA")
 
+    LOG.info("===================================")
     LOG.info("START main()")
+    LOG.info("===================================")
 
     summary: str = get_summary()
     LOG.info(summary)
 
-    LOG.info("END main()")
+    LOG.info("===================================")
+    LOG.info("END main() - Executed successfully!")
+    LOG.info("===================================")
 
 
 # === CONDITIONAL EXECUTION GUARD ===
 
-# WHY: If running this file as a script, then call main() function.
-# OBS: This is just standard Python boilerplate.
-# OBS: Just copy and paste it - do not bother to memorize it.
+# WHY: This is standard Python "boilerplate" - we copy and paste it
+# into every Python script. It is a "conditional execution" guard,
+# meaning: if this file is being run as a script, then execute the code
+# in the main() function.
 
 if __name__ == "__main__":
     main()

@@ -23,9 +23,11 @@
 When importing records from `worldPGSQL.sql`, **how many cities were imported**?
 
 ### Answer
+
 _Write the number of cities imported._
 
 ### Screenshot
+
 _Show evidence of how you determined this (for example, a COUNT query)._
 
 ```sql
@@ -38,7 +40,9 @@ _Show evidence of how you determined this (for example, a COUNT query)._
 
 ## Question 2
 
-Using the World database, write the SQL command to **display each country name along with the name of each language spoken in that country**.
+Using the World database, write the SQL command to
+**display each country name**
+along with the **name of each language spoken in that country**.
 
 ### SQL
 
@@ -54,7 +58,9 @@ Using the World database, write the SQL command to **display each country name a
 
 ## Question 3
 
-Using the World database, write the SQL command to **display each country name along with the name of each official language spoken in that country**.
+Using the World database, write the SQL command
+to **display each country name** along with the name
+of each **official language spoken in that country**.
 
 ### SQL
 
@@ -85,16 +91,19 @@ LEFT OUTER JOIN countrylanguage
 ON country.code = countrylanguage.countrycode;
 ```
 
-**In your own words**, describe what data the **second query returns that the first query does not**.
+**In your own words**, describe what data the
+**second query returns that the first query does not**.
 
 ### Answer
+
 _Write your explanation here._
 
 ---
 
 ## Question 5
 
-Using the World database, write the SQL command to **list all different forms of government** found in the data.
+Using the World database, write the SQL command
+to **list all different forms of government** found in the data.
 Do **not** repeat any form of government more than once.
 
 ### SQL
@@ -111,7 +120,8 @@ Do **not** repeat any form of government more than once.
 
 ## Question 6
 
-Using the World database, write the SQL command to **list all names of cities and countries in one column**.
+Using the World database, write the SQL command
+to **list all names of cities and countries in one column**.
 Label the column **"City or Country Name"**.
 
 ### SQL
@@ -128,7 +138,9 @@ Label the column **"City or Country Name"**.
 
 ## Question 7
 
-Using the World database, write the SQL command to **list all countries by name**, along with the **number of languages spoken in each country**.
+Using the World database, write the SQL command
+to **list all countries by name**,
+along with the **number of languages spoken in each country**.
 Be sure to **sort by country name**.
 
 ### SQL
@@ -145,7 +157,9 @@ Be sure to **sort by country name**.
 
 ## Question 8
 
-Using the World database, write the SQL command to **list all languages**, along with the **number of countries where each language is spoken**.
+Using the World database, write the SQL command
+to **list all languages**, along with the
+**number of countries where each language is spoken**.
 Be sure to **sort by language name**.
 
 ### SQL
@@ -162,9 +176,11 @@ Be sure to **sort by language name**.
 
 ## Question 9
 
-Using the World database, write the SQL command to **list countries that have more than two official languages**, along with the **number of official languages spoken**.
+Using the World database, write the SQL command
+to **list countries that have more than two official languages**,
+along with the **number of official languages spoken**.
 
-*Hint: There are 8 such countries in this dataset.*
+_Hint: There are 8 such countries in this dataset._
 
 ### SQL
 
@@ -180,9 +196,11 @@ Using the World database, write the SQL command to **list countries that have mo
 
 ## Question 10
 
-Using the World database, write the SQL command to **find cities where the district value is missing**.
+Using the World database, write the SQL command to
+**find cities where the district value is missing**.
 
-*Hint: Use `LIKE` and the dash (`-`) since some rows use that instead of actual data.*
+Hint: Use `LIKE` and the dash (`-`)
+since some rows use that instead of actual data.
 
 ### SQL
 
@@ -198,9 +216,10 @@ Using the World database, write the SQL command to **find cities where the distr
 
 ## Question 11
 
-Using the World database, write the SQL command to **calculate the percentage of cities with missing district values**.
+Using the World database, write the SQL command to
+**calculate the percentage of cities with missing district values**.
 
-*Hint: The result should be approximately 0.4%.*
+_Hint: The result should be approximately 0.4%._
 
 ### SQL
 

@@ -21,12 +21,15 @@
 
 ## Question 1
 
-When importing the documents from `restaurants-json.json`, **how many documents were imported into your collection**?
+When importing the documents from `restaurants-json.json`,
+**how many documents were imported into your collection**?
 
 ### Answer
+
 _Write the number of documents imported._
 
 ### Screenshot
+
 _Show evidence of how you determined this (for example, a count query)._
 
 ```javascript
@@ -39,7 +42,9 @@ _Show evidence of how you determined this (for example, a count query)._
 
 ## Question 2
 
-Before writing queries on the data, **what command do you use to set the MongoDB shell to operate on the `44661` database**?
+Before writing queries on the data,
+**what command** do you use to set the
+**MongoDB shell to operate on the `44661` database**?
 
 ### MongoDB Command
 
@@ -55,7 +60,9 @@ Before writing queries on the data, **what command do you use to set the MongoDB
 
 ## Question 3
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **locate all documents in the `"Queens"` borough**.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**locate all documents in the `"Queens"` borough**.
 
 ### MongoDB Query
 
@@ -71,7 +78,9 @@ Using your `restaurants` collection in the `44661` database, write the MongoDB q
 
 ## Question 4
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in the `"Queens"` borough**.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**find the number of restaurants in the `"Queens"` borough**.
 
 ### MongoDB Query
 
@@ -87,7 +96,10 @@ Using your `restaurants` collection in the `44661` database, write the MongoDB q
 
 ## Question 5
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in the `"Queens"` borough whose cuisine is `"Hamburgers"`**.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**find the number of restaurants** in the `"Queens"` borough
+**whose cuisine is `"Hamburgers"`**.
 
 ### MongoDB Query
 
@@ -103,9 +115,11 @@ Using your `restaurants` collection in the `44661` database, write the MongoDB q
 
 ## Question 6
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **find the number of restaurants in Zipcode `10460`**.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**find the number of restaurants in Zipcode `10460`**.
 
-*Hint: Look up how to query **embedded documents**.*
+_Hint: Look up how to query **embedded documents**._
 
 ### MongoDB Query
 
@@ -121,13 +135,15 @@ Using your `restaurants` collection in the `44661` database, write the MongoDB q
 
 ## Question 7
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **display only the names of restaurants in Zipcode `10460`**.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**display only the names of restaurants in Zipcode `10460`**.
 
-*Hint: Look up how to **project fields** in MongoDB.*
+_Hint: Look up how to **project fields** in MongoDB._
 
 Your output should resemble:
 
-```
+```json
 { name: "Wild Asia" }
 { name: "Terrace Cafe" }
 { name: "African Terrace" }
@@ -150,9 +166,13 @@ Your output should resemble:
 
 ## Question 8
 
-Using your `restaurants` collection in the `44661` database, write the MongoDB query needed to **display only the names of restaurants whose name contains `"IHOP"`**, ignoring case.
+Using your `restaurants` collection in the `44661` database,
+write the MongoDB query needed to
+**display only the names of restaurants whose name contains `"IHOP"`**,
+ignoring case.
 
 Your results should include:
+
 - `"Ihop"`
 - `"Ihop Restaurant"`
 

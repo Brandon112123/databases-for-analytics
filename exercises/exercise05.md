@@ -3,7 +3,7 @@
 - Name:
 - Course: Database for Analytics
 - Module:
-- Database Used:  `sqlda` (Sample Datasets)
+- Database Used: `sqlda` (Sample Datasets)
 - Tools Used: PostgreSQL (pgAdmin or psql)
 
 ---
@@ -23,11 +23,12 @@
 
 ## Question 1
 
-Using the `sqlda` database, write the SQL needed to show a **list of years** that emails were sent.
+Using the `sqlda` database, write the SQL needed
+to show a **list of years** that emails were sent.
 
 Your results should list years like this (order matters):
 
-```
+```text
 year
 2011
 2013
@@ -53,11 +54,13 @@ year
 
 ## Question 2
 
-Using the `sqlda` database, write the SQL needed to show the **number of messages sent by year**, ordered by year (as shown in the prompt).
+Using the `sqlda` database, write the SQL needed to
+show the **number of messages sent by year**,
+ordered by year (as shown in the prompt).
 
 Output should resemble:
 
-```
+```text
 count   year
 ...
 ```
@@ -77,6 +80,7 @@ count   year
 ## Question 3
 
 Using the `sqlda` database, write the SQL needed to show:
+
 - the **sent date**
 - the **opened date**
 - the **interval** between the two
@@ -97,7 +101,9 @@ Only include emails that contain **both** a sent date and an opened date.
 
 ## Question 4
 
-Using the `sqlda` database, write the SQL needed to show emails that contain an **opened date BEFORE the sent date**.
+Using the `sqlda` database,
+write the SQL needed to
+show emails that contain an **opened date BEFORE the sent date**.
 
 ### SQL
 
@@ -113,7 +119,9 @@ Using the `sqlda` database, write the SQL needed to show emails that contain an 
 
 ## Question 5
 
-Using the `sqlda` database: there are **over 100 emails** that contain an opened date **BEFORE** the sent date.
+Using the `sqlda` database:
+there are **over 100 emails**
+that contain an opened date **BEFORE** the sent date.
 
 After looking at the data, **why is this the case?**
 
@@ -166,7 +174,10 @@ _Write your explanation here._
 
 ## Question 7
 
-Using the `sqlda` database, write SQL to display an **array of salespeople for each dealership**, sorted by dealership.
+Using the `sqlda` database,
+write SQL to display an
+**array of salespeople for each dealership**,
+sorted by dealership.
 
 For example - dealership 1 is below:
 
@@ -189,6 +200,7 @@ For example - dealership 1 is below:
 ## Question 8
 
 Using the `sqlda` database, write SQL to display:
+
 - an **array of salespeople for each dealership**
 - the **state** of the dealership
 - the **number of salespeople** for the dealership
@@ -213,7 +225,8 @@ Reference image:
 
 ## Question 9
 
-Using the `sqlda` database, write the SQL needed to convert the **customers** table to **JSON**.
+Using the `sqlda` database, write the SQL needed to convert
+the **customers** table to **JSON**.
 
 ### SQL
 
@@ -230,6 +243,7 @@ Using the `sqlda` database, write the SQL needed to convert the **customers** ta
 ## Question 10
 
 Using the `sqlda` database, write SQL to display:
+
 - an **array of salespeople for each dealership**
 - the **state**
 - the **number of salespeople**
