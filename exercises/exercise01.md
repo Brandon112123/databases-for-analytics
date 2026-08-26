@@ -7,6 +7,12 @@
 
 ---
 
+See:
+
+[MySQL: Setting Up the World Database](https://dev.mysql.com/doc/world-setup/en/)
+
+---
+
 ## Instructions
 
 - Answer each question below.
