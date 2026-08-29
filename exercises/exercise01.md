@@ -56,7 +56,7 @@ Why do you think this data type was selected?
 
 ### Answer
 
-_Write your explanation here._
+IndepYear uses SMALLINT because a year is a whole number and does not need decimals.
 
 ### Screenshot
 
