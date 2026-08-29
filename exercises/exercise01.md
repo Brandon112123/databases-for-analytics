@@ -35,7 +35,7 @@ Why were these data types selected?
 
 ### Answer
 
-_Write your explanation here._
+Population uses INT because it is counted in whole numbers. LifeExpectancy uses DECIMAL(3,1) because it can include a decimal value.
 
 ### Screenshot
 
