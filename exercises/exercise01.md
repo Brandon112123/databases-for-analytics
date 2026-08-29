@@ -75,7 +75,7 @@ Explain why your proposed data type might be better in some situations.
 
 ### Answer
 
-_Write your explanation here._
+YEAR could be used instead of SMALLINT because the value represents a year. This could make the data easier to understand and help ensure that valid years are entered.
 
 ---
 
