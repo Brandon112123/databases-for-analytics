@@ -31,7 +31,7 @@ When importing records from `worldPGSQL.sql`, **how many cities were imported**?
 _Show evidence of how you determined this (for example, a COUNT query)._
 
 ```sql
-SELECT COUNT(*)
+SELECT COUNT(*) AS count_of_cities
 FROM city;
 ```
 
@@ -69,7 +69,11 @@ of each **official language spoken in that country**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT country.name, countrylanguage.language
+FROM country
+JOIN countrylanguage
+ON country.code = countrylanguage.countrycode
+WHERE countrylanguage.isofficial = 'T';
 ```
 
 ### Screenshot
@@ -100,7 +104,7 @@ ON country.code = countrylanguage.countrycode;
 
 ### Answer
 
-_Write your explanation here._
+The first query only returns countries that have a matching language, which gave me 984 rows. The second query returns all countries, even if they do not have a matching language, which gave me 990 rows.
 
 ---
 
@@ -113,7 +117,8 @@ Do **not** repeat any form of government more than once.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT governmentform
+FROM country;
 ```
 
 ### Screenshot
@@ -131,7 +136,11 @@ Label the column **"City or Country Name"**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT name AS "City or Country Name"
+FROM city
+UNION
+SELECT name
+FROM country;
 ```
 
 ### Screenshot
@@ -150,7 +159,12 @@ Be sure to **sort by country name**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT country.name, COUNT(countrylanguage.language)
+FROM country
+JOIN countrylanguage
+ON country.code = countrylanguage.countrycode
+GROUP BY country.name
+ORDER BY country.name;
 ```
 
 ### Screenshot
@@ -169,7 +183,10 @@ Be sure to **sort by language name**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT language, COUNT(countrycode)
+FROM countrylanguage
+GROUP BY language
+ORDER BY language;
 ```
 
 ### Screenshot
@@ -189,7 +206,13 @@ _Hint: There are 8 such countries in this dataset._
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT country.name, COUNT(countrylanguage.language)
+FROM country
+JOIN countrylanguage
+ON country.code = countrylanguage.countrycode
+WHERE countrylanguage.isofficial = 'T'
+GROUP BY country.name
+HAVING COUNT(countrylanguage.language) > 2;
 ```
 
 ### Screenshot
