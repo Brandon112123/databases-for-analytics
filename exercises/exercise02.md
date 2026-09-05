@@ -234,8 +234,7 @@ since some rows use that instead of actual data.
 ```sql
 SELECT name, district
 FROM city
-WHERE district LIKE CHR(8211) || '%';
-```
+WHERE district LIKE '–%';
 
 ### Screenshot
 
@@ -256,7 +255,7 @@ _Hint: The result should be approximately 0.4%._
 SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM city)
 AS missing_district_percentage
 FROM city
-WHERE district LIKE CHR(8211) || '%';
+WHERE district LIKE '–%';
 ```
 
 ### Screenshot
