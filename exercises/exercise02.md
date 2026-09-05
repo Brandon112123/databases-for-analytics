@@ -161,7 +161,7 @@ Be sure to **sort by country name**.
 ```sql
 SELECT country.name, COUNT(countrylanguage.language)
 FROM country
-JOIN countrylanguage
+LEFT JOIN countrylanguage
 ON country.code = countrylanguage.countrycode
 GROUP BY country.name
 ORDER BY country.name;
@@ -232,7 +232,9 @@ since some rows use that instead of actual data.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT name, district
+FROM city
+WHERE district LIKE CHR(8211) || '%';
 ```
 
 ### Screenshot
@@ -251,7 +253,10 @@ _Hint: The result should be approximately 0.4%._
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM city)
+AS missing_district_percentage
+FROM city
+WHERE district LIKE CHR(8211) || '%';
 ```
 
 ### Screenshot
