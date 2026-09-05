@@ -235,6 +235,7 @@ since some rows use that instead of actual data.
 SELECT name, district
 FROM city
 WHERE district LIKE '–%';
+```
 
 ### Screenshot
 
