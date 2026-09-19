@@ -42,8 +42,8 @@ JOIN countrylanguage AS cl
     ON c.code = cl.countrycode
 WHERE cl.isofficial = 'T'
 GROUP BY c.name
-HAVING COUNT(cl.language) > 2
-ORDER BY official_language_count DESC;
+HAVING COUNT(cl.language) = 3
+ORDER BY country;
 ```
 
 ### Screenshot
