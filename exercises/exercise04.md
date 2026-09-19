@@ -42,8 +42,8 @@ JOIN countrylanguage AS cl
     ON c.code = cl.countrycode
 WHERE cl.isofficial = 'T'
 GROUP BY c.name
-HAVING COUNT(cl.language) = 3
-ORDER BY country;
+HAVING COUNT(cl.language) > 2
+ORDER BY official_language_count DESC;
 ```
 
 ### Screenshot
@@ -74,8 +74,13 @@ JOIN countrylanguage AS cl
     ON c.code = cl.countrycode
 WHERE cl.isofficial = 'T'
 GROUP BY c.name
-HAVING COUNT(cl.language) = 3
-ORDER BY country;
+HAVING COUNT(cl.language) > 2
+ORDER BY official_language_count DESC;
+"""
+
+df = pd.read_sql(query, engine)
+
+display(df)
 """
 
 df = pd.read_sql(query, engine)
