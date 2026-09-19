@@ -81,11 +81,6 @@ ORDER BY official_language_count DESC;
 df = pd.read_sql(query, engine)
 
 display(df)
-"""
-
-df = pd.read_sql(query, engine)
-
-display(df)
 ```
 
 ### Screenshot
