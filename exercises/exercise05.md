@@ -1,8 +1,8 @@
 # Exercise 05: SQLDA Database - Dates, Data Quality, Arrays, and JSON
 
-- Name:
+- Name: Brandon Smith
 - Course: Database for Analytics
-- Module:
+- Module: 5
 - Database Used: `sqlda` (Sample Datasets)
 - Tools Used: PostgreSQL (pgAdmin or psql)
 
@@ -43,7 +43,11 @@ year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT DISTINCT
+    EXTRACT(YEAR FROM sent_date) AS year
+FROM emails
+WHERE sent_date IS NOT NULL
+ORDER BY year;
 ```
 
 ### Screenshot
@@ -68,7 +72,13 @@ count   year
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    COUNT(*) AS count,
+    EXTRACT(YEAR FROM sent_date) AS year
+FROM emails
+WHERE sent_date IS NOT NULL
+GROUP BY EXTRACT(YEAR FROM sent_date)
+ORDER BY year;
 ```
 
 ### Screenshot
@@ -90,7 +100,13 @@ Only include emails that contain **both** a sent date and an opened date.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    sent_date,
+    opened_date,
+    opened_date - sent_date AS interval
+FROM emails
+WHERE sent_date IS NOT NULL
+    AND opened_date IS NOT NULL;
 ```
 
 ### Screenshot
@@ -108,7 +124,13 @@ show emails that contain an **opened date BEFORE the sent date**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    email_id,
+    sent_date,
+    opened_date
+FROM emails
+WHERE opened_date < sent_date
+ORDER BY sent_date;
 ```
 
 ### Screenshot
@@ -127,11 +149,7 @@ After looking at the data, **why is this the case?**
 
 ### Answer
 
-_Write your explanation here._
-
-### Screenshot (if requested by instructor)
-
-![Q5 Screenshot](screenshots/q5_explain_date_issue.png)
+Some emails appear to have been opened before they were sent because the sent and opened timestamps were likely recorded using different time zones. The sent dates appear to use a standard time, while the opened dates may use the customer's local time. This makes some emails appear to have been opened before they were sent.
 
 ---
 
@@ -168,7 +186,7 @@ CREATE TEMP TABLE customer_dealership_distance AS (
 
 ### Answer
 
-_Write your explanation here._
+This code creates three temporary tables. The first table stores each customer's ID and combines their longitude and latitude into a geographic point. The second table does the same thing for each dealership. The third table uses a CROSS JOIN to compare every customer with every dealership and calculates the distance between their locations. This could be used to determine which dealership is closest to each customer.
 
 ---
 
@@ -188,7 +206,12 @@ For example - dealership 1 is below:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    dealership_id,
+    ARRAY_AGG(last_name || ',' || first_name) AS salespeople
+FROM salespeople
+GROUP BY dealership_id
+ORDER BY dealership_id;
 ```
 
 ### Screenshot
@@ -214,7 +237,16 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    s.dealership_id,
+    d.state,
+    ARRAY_AGG(s.last_name || ',' || s.first_name) AS salespeople,
+    COUNT(*) AS number_of_salespeople
+FROM salespeople s
+JOIN dealerships d
+    ON s.dealership_id = d.dealership_id
+GROUP BY s.dealership_id, d.state
+ORDER BY d.state;
 ```
 
 ### Screenshot
@@ -231,7 +263,9 @@ the **customers** table to **JSON**.
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT
+    ROW_TO_JSON(c)
+FROM customers c;
 ```
 
 ### Screenshot
@@ -258,7 +292,19 @@ Reference image:
 ### SQL
 
 ```sql
--- Your SQL here
+SELECT ROW_TO_JSON(dealership_data)
+FROM (
+    SELECT
+        s.dealership_id,
+        d.state,
+        ARRAY_AGG(s.last_name || ',' || s.first_name) AS salespeople,
+        COUNT(*) AS number_of_salespeople
+    FROM salespeople s
+    JOIN dealerships d
+        ON s.dealership_id = d.dealership_id
+    GROUP BY s.dealership_id, d.state
+    ORDER BY d.state
+) AS dealership_data;
 ```
 
 ### Screenshot
