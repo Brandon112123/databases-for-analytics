@@ -2,7 +2,7 @@
 
 From the Operational Model to the Dimensional Model
 
-- Name:
+- Name: Brandon Smith
 - Course: Database for Analytics
 - Module: 6
 
@@ -125,4 +125,6 @@ In 1-2 short paragraphs, explain:
 
 #### Design Notes
 
-_Write your design notes here._
+I chose customer, part, and date dimensions because they provide the information needed to analyze sales by customer, product, and time.
+
+The fact table uses daily sales as the grain and stores amount and quantity. This design can show how much a customer spent, how many parts were sold on a certain date, and how many items in a category were sold during a quarter.
