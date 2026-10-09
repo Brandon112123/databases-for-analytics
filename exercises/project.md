@@ -1,8 +1,8 @@
 # Module 7 - Final Project: Formula 1 Database
 
-**Name:** Brandon Smith
-**Course:** Database for Analytics
-**Operating System:** macOS
+**Name:** Brandon Smith  
+**Course:** Database for Analytics  
+**Operating System:** macOS  
 **Tools:** PostgreSQL and pgAdmin 4
 
 ## 1. Overview
