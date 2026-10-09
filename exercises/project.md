@@ -229,12 +229,15 @@ The Formula 1 database contains three tables: drivers, races, and results. The t
 | fastestlapspeed | varchar | Fastest lap speed |
 | statusid | integer | Race completion status ID |
 
-
 ## 8. Results and Conclusion
 
 My results showed that Lewis Hamilton had 106 wins, Michael Schumacher had 91 wins, and Max Verstappen had 71 wins in the imported data.
 
 This project helped me understand how to create a database, import CSV files, check data using SQL, and connect tables using JOIN. I also learned how to use GROUP BY to summarize results.
+
+## 9. Challenges and Solutions
+
+One challenge was importing the CSV files and making sure the data was correct. I checked the import settings and used SQL queries to make sure everything loaded properly.
 
 ## Reference
 
