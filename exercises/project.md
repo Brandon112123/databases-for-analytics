@@ -1,4 +1,3 @@
-
 # Module 7 - Final Project: Formula 1 Database
 
 **Name:** Brandon Smith
@@ -166,7 +165,72 @@ LIMIT 10;
 
 ![Drivers with most wins](screenshots/project_08_aggregate.png)
 
-## 7. Results and Conclusion
+## 7. Data Dictionary
+
+The Formula 1 database contains three tables: drivers, races, and results. The tables have 45 columns in total. Below are the column names, data types, and descriptions.
+
+### Drivers Table
+
+| Column | Data Type | Description |
+|---|---|---|
+| driverid | integer | Unique driver ID |
+| driverref | varchar | Driver reference name |
+| number | varchar | Driver's racing number |
+| code | varchar | Driver's abbreviation |
+| forename | varchar | Driver's first name |
+| surname | varchar | Driver's last name |
+| dob | date | Driver's date of birth |
+| nationality | varchar | Driver's nationality |
+| url | varchar | Link to driver information |
+
+### Races Table
+
+| Column | Data Type | Description |
+|---|---|---|
+| raceid | integer | Unique race ID |
+| year | integer | Season year |
+| round | integer | Race number in the season |
+| circuitid | integer | Circuit ID |
+| name | varchar | Race name |
+| date | date | Race date |
+| time | varchar | Race start time |
+| url | varchar | Link to race information |
+| fp1_date | varchar | First practice date |
+| fp1_time | varchar | First practice time |
+| fp2_date | varchar | Second practice date |
+| fp2_time | varchar | Second practice time |
+| fp3_date | varchar | Third practice date |
+| fp3_time | varchar | Third practice time |
+| quali_date | varchar | Qualifying date |
+| quali_time | varchar | Qualifying time |
+| sprint_date | varchar | Sprint race date |
+| sprint_time | varchar | Sprint race time |
+
+### Results Table
+
+| Column | Data Type | Description |
+|---|---|---|
+| resultid | integer | Unique result ID |
+| raceid | integer | Race associated with the result |
+| driverid | integer | Driver associated with the result |
+| constructorid | integer | Team ID |
+| number | varchar | Driver's racing number |
+| grid | integer | Starting position |
+| position | varchar | Final finishing position |
+| positiontext | varchar | Finishing position as text |
+| positionorder | integer | Numeric finishing order |
+| points | numeric | Championship points earned |
+| laps | integer | Number of laps completed |
+| time | varchar | Race time or time difference |
+| milliseconds | varchar | Race time in milliseconds |
+| fastestlap | varchar | Lap number of fastest lap |
+| rank | varchar | Fastest lap ranking |
+| fastestlaptime | varchar | Fastest lap time |
+| fastestlapspeed | varchar | Fastest lap speed |
+| statusid | integer | Race completion status ID |
+
+
+## 8. Results and Conclusion
 
 My results showed that Lewis Hamilton had 106 wins, Michael Schumacher had 91 wins, and Max Verstappen had 71 wins in the imported data.
 
