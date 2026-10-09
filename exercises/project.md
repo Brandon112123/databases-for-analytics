@@ -17,16 +17,11 @@ Dataset: https://www.kaggle.com/datasets/atharvranjan/formula-1-world-championsh
 
 I downloaded three CSV files:
 
-- drivers.csv
-- races.csv
-- results.csv
+- drivers.csv - 9 columns, 879 rows
+- races.csv - 18 columns, 1,164 rows
+- results.csv - 18 columns, 27,568 rows
 
-After importing the files, my database contained:
-
-- Drivers: 879 rows
-- Races: 1,164 rows
-- Results: 27,568 rows
-
+The files were in CSV format.
 ## 3. Creating the Database
 
 I created a PostgreSQL database named `formula1_db`.
@@ -63,11 +58,7 @@ ORDER BY table_name, ordinal_position;
 
 ## 4. Importing the Data
 
-I downloaded the CSV files from Kaggle and used pgAdmin 4 to import them into PostgreSQL.
-
-I matched the columns with the CSV files and checked the data after importing it.
-
-The hardest part was finding a dataset that met the project requirements. I also had to make sure the columns matched the files and that missing values were handled correctly.
+I downloaded the three CSV files from Kaggle and used pgAdmin 4 to import them into PostgreSQL. I made sure the columns matched and checked the data after importing it.
 
 ## 5. Checking the Data
 
